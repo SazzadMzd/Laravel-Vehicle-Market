@@ -53,6 +53,10 @@ class HomeController extends Controller
         //     ->update(['published_at' => now()]);
 
 
+        // $car = Car::find(1);
+        // dd($car->features);
+
+
 
         return view('home.index');
 
