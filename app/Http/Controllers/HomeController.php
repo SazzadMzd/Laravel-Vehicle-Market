@@ -3,8 +3,13 @@
 namespace App\Http\Controllers;
 
 use App\Models\Car;
+use App\Models\CarModel;
+use App\Models\Maker;
+use App\Models\Model;
+use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\View;
+
 
 class HomeController extends Controller
 {
@@ -57,8 +62,26 @@ class HomeController extends Controller
         // dd($car->features);
 
 
+        // $maker = Maker::factory()->create();
+        // dd($maker);
+
+        // User::factory()->create([
+        //     'name' => 'Sazzad'
+        // ]);
+
+
+
+        // CarModel::factory()
+        //     ->count(1)
+        //     ->forMaker(['name' => 'new'])
+        //     ->create();
+
+        User::factory()
+            ->has(Car::factory()->count(5), 'favouriteCars')
+            ->create();
 
         return view('home.index');
+
 
     }
 }

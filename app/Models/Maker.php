@@ -22,8 +22,8 @@ class Maker extends Model
         return $this->hasMany(Car::class);
     }
 
-    public function models(): HasMany
+    public function carModels(): HasMany
     {
-        return $this->hasMany(Model::class);
+        return $this->hasMany(CarModel::class);
     }
 }
